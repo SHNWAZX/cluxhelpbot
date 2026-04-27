@@ -8,7 +8,7 @@ import db
 
 def register_afk(app: Client):
 
-    @app.on_message(filters.group & (filters.command("afk") | filters.regex(r"^(?i)brb\b")))
+    @app.on_message(filters.group & (filters.command("afk") | filters.regex(r"(?i)^brb\b")))
     async def go_afk(client, message: Message):
         user = message.from_user
         parts = message.text.split(maxsplit=1)
